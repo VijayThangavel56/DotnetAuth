@@ -1,11 +1,9 @@
-﻿using DotnetAuth.Domain.Contracts;
-using DotnetAuth.Service;
+﻿using ECommerce.BLL.Interface;
+using ECommerce.DTO;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotnetAuth.Controllers
+namespace ECommerce.API.Controllers
 {
     [Route("api/")]
     [ApiController]

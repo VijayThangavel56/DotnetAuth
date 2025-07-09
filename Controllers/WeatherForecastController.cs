@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotnetAuth.Controllers
+namespace ECommerce.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

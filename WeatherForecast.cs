@@ -1,4 +1,4 @@
-namespace DotnetAuth
+namespace ECommerce.API
 {
     public class WeatherForecast
     {

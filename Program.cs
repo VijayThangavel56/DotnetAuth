@@ -1,9 +1,11 @@
-using DotnetAuth.Domain.Entities;
-using DotnetAuth.Exceptions;
-using DotnetAuth.Extensions;
-using DotnetAuth.Infrastructure.Context;
-using DotnetAuth.Infrastructure.MappingProfile;
-using DotnetAuth.Service;
+
+using ECommerce.API.Service;
+using ECommerce.API.ServiceExtensions;
+using ECommerce.BLL.Implementation;
+using ECommerce.BLL.Interface;
+using ECommerce.BLL.Mapping;
+using ECommerce.DAL.Data;
+using ECommerce.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -25,7 +27,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Version = "v1",
-        Title = "DotnetAuth API",
+        Title = "ECommerce.API API",
         Description = "A simple example ASP.NET Core Web API"
     });
 
@@ -67,14 +69,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"));
 });
 
-builder.Services.AddIdentity<ApplicationUser,IdentityRole>().
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().
     AddEntityFrameworkStores<ApplicationDbContext>().
     AddDefaultTokenProviders();
-builder.Services.AddScoped<IUserService, UserServiceImpl>();
-builder.Services.AddScoped<ITokenService, TokenServiceImple>();
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
+builder.Services.AddApplicationServices();
 builder.Services.ConfigureIdentity();
 builder.Services.ConfigureJwt();
 builder.Services.ConfigureCors();
