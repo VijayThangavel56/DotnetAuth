@@ -9,6 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Client\**" />
+    <Content Remove="Client\**" />
+    <EmbeddedResource Remove="Client\**" />
+    <None Remove="Client\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ECommerce.sln" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
@@ -29,19 +40,6 @@
     <ProjectReference Include="..\ECommerce.DAL\ECommerce.DAL.csproj" />
     <ProjectReference Include="..\ECommerce.DTO\ECommerce.DTO.csproj" />
     <ProjectReference Include="..\ECommerce.Shared\ECommerce.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Client\client-app\src\assets\images\" />
-    <Folder Include="Client\client-app\src\assets\styles\" />
-    <Folder Include="Client\client-app\src\components\common\" />
-    <Folder Include="Client\client-app\src\components\layout\" />
-    <Folder Include="Client\client-app\src\features\auth\" />
-    <Folder Include="Client\client-app\src\hooks\" />
-    <Folder Include="Client\client-app\src\utils\" />
-    <Folder Include="Client\client-app\src\store\" />
-    <Folder Include="Client\client-app\src\services\" />
-    <Folder Include="Client\client-app\src\routes\" />
   </ItemGroup>
 
 </Project>
