@@ -1,0 +1,11 @@
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\bin\Debug\net8.0\ECommerce.DTO.deps.json
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\bin\Debug\net8.0\ECommerce.DTO.dll
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\bin\Debug\net8.0\ECommerce.DTO.pdb
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.AssemblyInfoInputs.cache
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.AssemblyInfo.cs
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.csproj.CoreCompileInputs.cache
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.dll
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\refint\ECommerce.DTO.dll
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.pdb
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ref\ECommerce.DTO.dll
