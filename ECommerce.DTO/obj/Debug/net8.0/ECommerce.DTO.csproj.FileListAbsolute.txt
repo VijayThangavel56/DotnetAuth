@@ -5,6 +5,7 @@ C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECom
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.AssemblyInfoInputs.cache
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.AssemblyInfo.cs
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.csproj.CoreCompileInputs.cache
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.sourcelink.json
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.dll
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\refint\ECommerce.DTO.dll
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DTO\obj\Debug\net8.0\ECommerce.DTO.pdb

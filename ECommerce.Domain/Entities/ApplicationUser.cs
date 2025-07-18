@@ -16,5 +16,7 @@ namespace ECommerce.Domain.Entities
         public DateTime? RefreshTokenExpiryTime { get; set; }
         public DateTime CreateAt { get; set; }
         public DateTime UpdateAt { get; set; }
+
+        public ICollection<Address> Addresses { get; set; }
     }
 }

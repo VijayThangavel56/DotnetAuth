@@ -693,7 +693,8 @@
       },
       "ECommerce.Shared/1.0.0": {
         "dependencies": {
-          "ECommerce.DTO": "1.0.0"
+          "ECommerce.DTO": "1.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.3.0"
         },
         "runtime": {
           "ECommerce.Shared.dll": {

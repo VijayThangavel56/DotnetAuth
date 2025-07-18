@@ -14,6 +14,7 @@ C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECom
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECommerce.BLL.AssemblyInfoInputs.cache
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECommerce.BLL.AssemblyInfo.cs
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECommerce.BLL.csproj.CoreCompileInputs.cache
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECommerce.BLL.sourcelink.json
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECommerc.A91174C8.Up2Date
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\ECommerce.BLL.dll
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.BLL\obj\Debug\net8.0\refint\ECommerce.BLL.dll

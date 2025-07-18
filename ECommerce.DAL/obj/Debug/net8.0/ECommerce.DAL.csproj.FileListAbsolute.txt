@@ -13,6 +13,7 @@ C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECom
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECommerce.DAL.AssemblyInfoInputs.cache
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECommerce.DAL.AssemblyInfo.cs
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECommerce.DAL.csproj.CoreCompileInputs.cache
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECommerce.DAL.sourcelink.json
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECommerc.37DF4472.Up2Date
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\ECommerce.DAL.dll
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.DAL\obj\Debug\net8.0\refint\ECommerce.DAL.dll

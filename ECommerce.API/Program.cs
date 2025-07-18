@@ -69,7 +69,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"));
 });
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>().
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>().
     AddEntityFrameworkStores<ApplicationDbContext>().
     AddDefaultTokenProviders();
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);

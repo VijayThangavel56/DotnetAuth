@@ -10,20 +10,20 @@ using System.Security.Cryptography;
 
 namespace ECommerce.BLL.Implementation
 {
-    public class UserServiceImpl : IUserService
+    public class UserService : IUserService
     {
         private readonly ITokenService _tokenService;
         private readonly ICurrentUserService _currentUserService;
         private readonly UserManager<ApplicationUser> _userManager;
-       private readonly IMapper _mapper;
-        private readonly ILogger<UserServiceImpl> _logger;
-        
-        public UserServiceImpl(
+        private readonly IMapper _mapper;
+        private readonly ILogger<UserService> _logger;
+
+        public UserService(
             ITokenService tokenService,
             ICurrentUserService currentUserService,
             UserManager<ApplicationUser> userManager,
             IMapper mapper,
-            ILogger<UserServiceImpl> logger)
+            ILogger<UserService> logger)
         {
             _tokenService = tokenService;
             _currentUserService = currentUserService;
@@ -33,7 +33,7 @@ namespace ECommerce.BLL.Implementation
         }
         public async Task<UserResponse> RegisterUserAsync(UserRegisterRequst userRegisterRequst)
         {
-             _logger.LogInformation("Registering user with email: {Email}", userRegisterRequst.Email); 
+            _logger.LogInformation("Registering user with email: {Email}", userRegisterRequst.Email);
             var exsistingUser = await _userManager.FindByEmailAsync(userRegisterRequst.Email);
             if (exsistingUser != null)
             {
@@ -43,11 +43,11 @@ namespace ECommerce.BLL.Implementation
             var newUser = _mapper.Map<ApplicationUser>(userRegisterRequst);
 
             newUser.UserName = GenerateUserName(userRegisterRequst.FirstName, userRegisterRequst.LastName);
-            var result =await _userManager.CreateAsync(newUser, userRegisterRequst.Password);
+            var result = await _userManager.CreateAsync(newUser, userRegisterRequst.Password);
             if (!result.Succeeded)
             {
                 var errorMessage = string.Join(", ", result.Errors.Select(e => e.Description));
-                _logger.LogError("Falied to create user:{errorMessage}",errorMessage);
+                _logger.LogError("Falied to create user:{errorMessage}", errorMessage);
                 throw new Exception($"User creation failed: {errorMessage}");
 
             }
@@ -102,7 +102,7 @@ namespace ECommerce.BLL.Implementation
 
             var userName = baseUserName;
             var counter = 1;
-            while(_userManager.Users.Any(u => u.UserName == userName))
+            while (_userManager.Users.Any(u => u.UserName == userName))
             {
                 userName = $"{baseUserName}{counter}";
                 counter++;
@@ -113,7 +113,7 @@ namespace ECommerce.BLL.Implementation
         public async Task<UserResponse> GetByIdAsync(Guid id)
         {
             _logger.LogInformation("Retrieving user with ID: {UserId}", id);
-            var user =await _userManager.FindByIdAsync(id.ToString());
+            var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
             {
                 _logger.LogWarning("User with ID {UserId} not found.", id);
@@ -124,7 +124,7 @@ namespace ECommerce.BLL.Implementation
         }
         public async Task<CurrentUserResponse> GetCurrentUserAsync()
         {
-            var user  = await _userManager.FindByIdAsync(_currentUserService.GetUserId());
+            var user = await _userManager.FindByIdAsync(_currentUserService.GetUserId());
             if (user == null)
             {
                 _logger.LogWarning("Current user not found.");
@@ -153,9 +153,9 @@ namespace ECommerce.BLL.Implementation
                 _logger.LogWarning("User with refresh token {RefreshToken} not found.", refreshokenRequest.RefreshToken);
                 throw new Exception("Invalid refresh token");
             }
-            
+
             //validate refresh token expiry time
-            if(user.RefreshTokenExpiryTime < DateTime.UtcNow)
+            if (user.RefreshTokenExpiryTime < DateTime.UtcNow)
             {
                 _logger.LogWarning("Refresh token for user {UserId} has expired.", user.Id);
                 throw new Exception("Refresh token has expired");
@@ -163,13 +163,13 @@ namespace ECommerce.BLL.Implementation
             var newAccessToken = await _tokenService.GenerateToken(user);
             var currentUserResponse = _mapper.Map<CurrentUserResponse>(user);
             currentUserResponse.AccessToken = newAccessToken;
-             _logger.LogInformation("Token refreshed successfully for user with ID: {UserId}", user.Id);
+            _logger.LogInformation("Token refreshed successfully for user with ID: {UserId}", user.Id);
             return currentUserResponse;
         }
 
         public async Task DeleteAsync(Guid id)
         {
-            var user =await _userManager.FindByIdAsync(id.ToString());
+            var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
             {
                 _logger.LogWarning("User with ID {UserId} not found.", id);
@@ -179,14 +179,14 @@ namespace ECommerce.BLL.Implementation
             await _userManager.DeleteAsync(user);
         }
 
-     
-
-
-       
 
 
 
-   
+
+
+
+
+
         public async Task<RevokeRefreshTokenResponse> RevokeRefreshTokenAsync(RefreshokenRequest refreshokenRequest)
         {
             _logger.LogInformation("Revoking refresh token");
@@ -211,7 +211,7 @@ namespace ECommerce.BLL.Implementation
             user.RefreshToken = null;
             user.RefreshTokenExpiryTime = null; // Clear the refresh token expiry time
             var updateResult = await _userManager.UpdateAsync(user);
-            
+
             if (!updateResult.Succeeded)
             {
                 var errorMessage = string.Join(", ", updateResult.Errors.Select(e => e.Description));
@@ -221,7 +221,7 @@ namespace ECommerce.BLL.Implementation
                     Message = "Failed to revoke refresh token: " + errorMessage,
                 };
             }
-            
+
             _logger.LogInformation("Refresh token revoked successfully for user with ID: {UserId}", user.Id);
             return new RevokeRefreshTokenResponse
             {
@@ -231,7 +231,7 @@ namespace ECommerce.BLL.Implementation
 
         public async Task<UserResponse> UpdateUserAsync(Guid id, UpdateUserRequest updateUserRequest)
         {
-             var user =await _userManager.FindByIdAsync(id.ToString());
+            var user = await _userManager.FindByIdAsync(id.ToString());
             if (user == null)
             {
                 _logger.LogWarning("User with ID {UserId} not found.", id);
@@ -240,11 +240,29 @@ namespace ECommerce.BLL.Implementation
             user.FirstName = updateUserRequest.FirstName;
             user.LastName = updateUserRequest.LastName;
             user.Email = updateUserRequest.Email;
-            user.UserName=GenerateUserName(updateUserRequest.FirstName, updateUserRequest.LastName);
+            user.UserName = GenerateUserName(updateUserRequest.FirstName, updateUserRequest.LastName);
             user.UpdateAt = DateTime.UtcNow;
             await _userManager.UpdateAsync(user);
             _logger.LogInformation("User with ID {UserId} updated successfully.", id);
             return _mapper.Map<UserResponse>(user);
+        }
+
+        public async Task<IEnumerable<ApplicationUser>> GetAllUserAsync()
+        {
+            return await _userManager.Users.ToListAsync();
+        }
+
+        public async Task<bool> AssignRolesAsync(string userId, IEnumerable<string> roles)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null) return false;
+
+            var currentRoles = await _userManager.GetRolesAsync(user);
+            var result = await _userManager.RemoveFromRolesAsync(user, currentRoles);
+            if (!result.Succeeded) return false;
+
+            result = await _userManager.AddToRolesAsync(user, roles);
+            return result.Succeeded;
         }
     }
 }

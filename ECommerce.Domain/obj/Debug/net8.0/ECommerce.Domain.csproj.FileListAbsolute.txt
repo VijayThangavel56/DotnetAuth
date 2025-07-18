@@ -6,6 +6,7 @@ C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\E
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\ECommerce.Domain.AssemblyInfoInputs.cache
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\ECommerce.Domain.AssemblyInfo.cs
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\ECommerce.Domain.csproj.CoreCompileInputs.cache
+C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\ECommerce.Domain.sourcelink.json
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\ECommerce.Domain.dll
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\refint\ECommerce.Domain.dll
 C:\Users\KK COMPUTERS\source\repos\ECommerce\ECommerce.Domain\obj\Debug\net8.0\ECommerce.Domain.pdb

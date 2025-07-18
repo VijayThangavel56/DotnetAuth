@@ -10,9 +10,10 @@ public static class ServiceColletionExtensions
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
         #region BLL Services
-        services.AddScoped<IUserService, UserServiceImpl>();
+        services.AddScoped<IUserService, UserService>();
         services.AddScoped<ITokenService, TokenServiceImple>();
         services.AddScoped<ICurrentUserService, CurrentUserService>();
+        services.AddScoped<IRoleService , RoleService>();
         #endregion
 
         #region DAL Repositories

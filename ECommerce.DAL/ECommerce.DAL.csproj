@@ -26,4 +26,8 @@
     <ProjectReference Include="..\ECommerce.Shared\ECommerce.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DbScripts\" />
+  </ItemGroup>
+
 </Project>

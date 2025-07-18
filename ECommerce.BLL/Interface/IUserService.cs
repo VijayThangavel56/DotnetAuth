@@ -1,9 +1,12 @@
-﻿using ECommerce.DTO;
+﻿using ECommerce.Domain.Entities;
+using ECommerce.DTO;
 
 namespace ECommerce.BLL.Interface
 {
     public interface IUserService
     {
+        Task<IEnumerable<ApplicationUser>> GetAllUserAsync();
+        Task<bool> AssignRolesAsync(string userId, IEnumerable<string> roles);
         Task<UserResponse> RegisterUserAsync(UserRegisterRequst userRegisterRequst);
         Task<CurrentUserResponse> GetCurrentUserAsync();
         Task<UserResponse> GetByIdAsync(Guid id);
