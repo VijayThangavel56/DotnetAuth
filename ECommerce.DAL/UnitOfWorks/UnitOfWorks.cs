@@ -1,12 +1,14 @@
 ﻿using ECommerce.DAL.Data;
 using ECommerce.DAL.Repositories.IRepository;
 using ECommerce.DAL.Repositories.Repository;
+using ECommerce.Domain.Entities;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace ECommerce.DAL.UnitOfWorks
 {
     public class UnitOfWorks(ApplicationDbContext context) : IUnitOfWorks, IDisposable
     {
+
         /// <summary>
         /// Handles unit of work operations including transaction management and repository access.
         /// </summary>
@@ -17,12 +19,18 @@ namespace ECommerce.DAL.UnitOfWorks
 
         // Private repo instances
         private IApplicationUserRepository? _applicationUser;
+        IRepositoryBase<Product>? _productRepository;
+        IRepositoryBase<Category>? _categoryRepository;
+
 
         /// <inheritdoc />
         public IApplicationUserRepository ApplicationUser =>
             _applicationUser ??= new ApplicationUserRepository(_context);
+        public IRepositoryBase<Product> Product =>
+            _productRepository ??= new RepositoryBase<Product>(_context);
 
-
+        public IRepositoryBase<Category> Category =>
+            _categoryRepository ??= new RepositoryBase<Category>(_context);
         /// <summary>
         /// Begins a new database transaction.
         /// </summary>

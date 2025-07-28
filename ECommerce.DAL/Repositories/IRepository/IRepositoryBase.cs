@@ -21,6 +21,7 @@ namespace ECommerce.DAL.Repositories.IRepository
         void DeleteRange(IEnumerable<T> entities);
         void DeleteWhere(Expression<Func<T, bool>> where);
         #endregion
+        Task<T?> GetByIdAsync(object id);
 
         #region Query
         Task<T?> GetAsync(Expression<Func<T, bool>> where,Func<IQueryable<T>, IIncludableQueryable<T,object?>>? include=null,Expression<Func<T,T>>? selector=null,Expression<Func<T, object>>? orderBy = null, bool noTracking = false);

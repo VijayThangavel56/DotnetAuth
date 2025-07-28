@@ -65,6 +65,7 @@ namespace ECommerce.DAL.Data
                 .WithMany()
                 .HasForeignKey(o => o.BillingAddressId)
                 .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

@@ -28,6 +28,11 @@ namespace ECommerce.DAL.Repositories.Repository
         public void UpdateRange(IEnumerable<T> entities) => _dbSet.UpdateRange(entities);
         #endregion
 
+       public async Task<T?> GetByIdAsync(object id)
+        {
+            return await _dbSet.FindAsync(id).AsTask();
+        }
+
         #region Delete Methods
         public void Delete(T entity) => _dbSet.Remove(entity);
         public void DeleteRange(IEnumerable<T> entities) => _dbSet.RemoveRange(entities);

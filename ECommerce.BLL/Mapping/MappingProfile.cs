@@ -8,9 +8,20 @@ namespace ECommerce.BLL.Mapping
     {
         public MappingProfile()
         {
+            ProductMap();
+            AuthMap();
+        }
+
+        public void AuthMap()
+        {
             CreateMap<ApplicationUser, UserResponse>();
             CreateMap<ApplicationUser, CurrentUserResponse>();
             CreateMap<UserRegisterRequst, ApplicationUser>();
+        }
+        public void ProductMap()
+        {
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, ProductDto>();
         }
 
     }
